@@ -4,10 +4,7 @@ const { Pool } = require('pg');
 // pour se connecter en local commenter
 
 const pool = new Pool({
-    connectionString:process.env.DATABASE_URL,
-    ssl: {
-        rejectUnauthorized: false
-    }
+    connectionString:process.env.DATABASE_URL
 });
 
 module.exports = pool;
