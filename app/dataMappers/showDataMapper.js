@@ -14,9 +14,15 @@ module.exports = {
   async randomShows() {
     try {
       const apiUrl =
-        "https://api.betaseries.com/shows/random?nb=5&=&key=e7da6c21d678&";
+        "https://api.betaseries.com/shows/random?v=3.0",
+        args = {
+          'nb': 5,
+          'key': process.env.BETASERIES_API_KEY,
+        },
+        params = '&nb=' + args.nb + '&key=' + args.key;
+      const result = apiUrl + params;
       // Methode qui affiche 5 series au hasard
-      const response = await fetch(apiUrl);
+      const response = await fetch(result);
       let body = await response.json();
       if (!Array.isArray(body)) {
         body = [body];

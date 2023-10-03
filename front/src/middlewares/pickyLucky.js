@@ -5,9 +5,8 @@ import { setPickyToTrue, saveInfoPickyLucky} from 'src/actions/lucky'
 const resultPickyLucky = (store) => (next) => (action) => {
   switch (action.type){
     case GET_RANDOM_FOR_PICKY_LUCKY: {
-      axios.get('http://localhost:3000/movies/random')
+      axios.get('http://167.99.45.139:3000/movies/random')
         .then((response)=> {
-          console.log('ok')
           console.log(response.data[0].movies[0])
           const action = setPickyToTrue()
           const  movie  = response.data[0].movies[0]
@@ -15,7 +14,6 @@ const resultPickyLucky = (store) => (next) => (action) => {
           store.dispatch(action)
         })
         .catch((error) => {
-          console.log('ok10')
           console.log(error)
         })
         break;

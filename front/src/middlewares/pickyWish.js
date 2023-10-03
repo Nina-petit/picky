@@ -46,7 +46,7 @@ const pickyWish = (store) => (next) => (action) => {
         };
         
         // Adds the program to the watchlist with every information needed
-        axios.post('http://localhost:3000/bookmark',
+        axios.post('http://167.99.45.139:3000/bookmark',
           bodyParameters,
           config
           )
@@ -66,7 +66,7 @@ const pickyWish = (store) => (next) => (action) => {
       const programId = action.programId;
       
       // Deletes the program from the watchlist thanks to its ID
-      axios.delete(`http://localhost:3000/bookmark/${programId}`,
+      axios.delete(`http://167.99.45.139:3000/bookmark/${programId}`,
         config
         )
         .then(() => {
@@ -81,7 +81,7 @@ const pickyWish = (store) => (next) => (action) => {
     }
 
     case GET_BOOKMARK: {
-    axios.get('http://localhost:3000/member/bookmark',
+    axios.get('http://167.99.45.139:3000/member/bookmark',
     config)
     .then ((response) => {
       // Gets all the programs that are currently in the watchlist
@@ -120,7 +120,7 @@ const pickyWish = (store) => (next) => (action) => {
   };
 
   case GET_BOOKMARKS_IDS: {
-      axios.get('http://localhost:3000/member/bookmark',
+      axios.get('http://167.99.45.139:3000/member/bookmark',
     config)
     .then ((response) => {
       // Gets all the programs that are currently in the watchlist

@@ -5,7 +5,7 @@ const platforms = (store) => (next) => (action) => {
   switch (action.type){
    case FETCH_PLATFORMS: {
      // Request to get all platforms, to be able to get the logos
-    axios.get('http://localhost:3000/platform')
+    axios.get('http://167.99.45.139:3000/platform')
       .then((response) => {
         const platforms = response.data[0].platforms.svod;
         store.dispatch(savePlatforms(platforms));

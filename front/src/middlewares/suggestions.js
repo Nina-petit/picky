@@ -1,16 +1,14 @@
 import axios from 'axios';
-
 import { getRandomSuccess, GET_RANDOM } from '../actions/suggestions';
 
 const suggestions = (store) => (next) => (action) => {
   switch (action.type) {
     case GET_RANDOM: {
-      axios.get('http://localhost:3000/movies/random')
+      axios.get('http://167.99.45.139:3000/movies/random')
       .then ((response) => {
-        console.log('oki')
         const { movies } = response.data[0];
         const movie = movies[0];
-      axios.get('http://localhost:3000/shows/random')
+      axios.get('http://167.99.45.139:3000/shows/random')
       .then ((response) => {
         const { shows } = response.data[0];
         const show = shows[0];

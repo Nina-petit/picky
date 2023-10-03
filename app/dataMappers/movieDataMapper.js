@@ -13,9 +13,15 @@ module.exports = {
 
   async randomMovies() {
     try {
-      const apiUrl = 'https://api.betaseries.com/movies/random?nb=5&=&key=e7da6c21d678&';
+      const apiUrl = 'https://api.betaseries.com/movies/random?nb=5',
+      args = {
+        'nb': 5,
+        'key': process.env.BETASERIES_API_KEY,
+      },
+      params = '&nb=' + args.nb + '&key=' + args.key;
+      const result = apiUrl + params;
       // Methode qui affiche 5 series au hasard
-      const response = await fetch(apiUrl)
+      const response = await fetch(result)
       let body = await response.json();
       if (!Array.isArray(body)) {
         body = [body];
@@ -58,7 +64,6 @@ async searchMovie(id) {
   },
   params = '&id=' + args.id.id + '&key=' + args.key;
 const result = apiUrl + params;
-console.log("resultat betaseries :", result)
 
 const response = await fetch(result);
 

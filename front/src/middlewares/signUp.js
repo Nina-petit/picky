@@ -5,7 +5,7 @@ const signUp = (store) => (next) => (action) => {
     case SIGN_UP: {
 
       const state = store.getState();
-      axios.post('http://localhost:3000/signup', {
+      axios.post('http://167.99.45.139:3000/signup', {
         pseudo: state.user.pseudo,
         email: state.user.email,
         password: state.user.password,

@@ -6,7 +6,7 @@ const result = (store) => (next) => (action) => {
     case PICKYMOOD_RESULT: {
       const state = store.getState();
       // Request for programs based on what the user chose in Picky Mood
-      axios.post('http://localhost:3000/moodresults', {
+      axios.post('http://167.99.45.139:3000/moodresults', {
         ShowOrMovie: state.pickyMood.ShowOrMovie,
         emotions: state.pickyMood.emotions,
         platforms: state.pickyMood.platforms,

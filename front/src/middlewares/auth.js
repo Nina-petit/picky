@@ -5,7 +5,7 @@ const auth = (store) => (next) => (action) => {
   switch (action.type){
     case LOGIN: {
       const state = store.getState();
-      axios.post('http://localhost:3000/signin', {
+      axios.post('http://167.99.45.139:3000/signin', {
         email: state.user.email,
         password: state.user.password,
       })

@@ -34,7 +34,7 @@ const profil =  (store) => (next) => (action) => {
   switch (action.type){
     case GET_PROFIL: {
       const state = store.getState();
-      axios.get('http://localhost:3000/member', {
+      axios.get('http://167.99.45.139:3000/member', {
         headers: {
           "Bearer": `${store.getState().status.token}`,
           "Accept": "application/json",
@@ -43,7 +43,6 @@ const profil =  (store) => (next) => (action) => {
         
       })
         .then((response) => {
-          console.log(response)
           const { member , pseudo } = response.data
           const saveProfil = actionSaveProfil(member, pseudo);
           store.dispatch(saveProfil, reset())
@@ -74,7 +73,7 @@ const profil =  (store) => (next) => (action) => {
         email: email,
      };*/
      
-      axios.patch('http://localhost:3000/member',
+      axios.patch('http://167.99.45.139:3000/member',
         bodyParameters,
         config
       )
@@ -107,7 +106,7 @@ const profil =  (store) => (next) => (action) => {
         confirmationPassword: state.user.confirmationPassword,
      };
      
-      axios.patch('http://localhost:3000/member',
+      axios.patch('http://167.99.45.139:3000/member',
         bodyParameters,
         config
       )
@@ -126,15 +125,13 @@ const profil =  (store) => (next) => (action) => {
     }
 
     case DELETE_PROFIL: {
-      console.log(store.getState().status.token)
-      axios.delete('http://localhost:3000/member', {
+      axios.delete('http://167.99.45.139:3000/member', {
         headers: {
           "Bearer": `${store.getState().status.token}`
         },
         
       })
         .then((response) => {
-          console.log('case Delete MiddleWare',response)
           notifySup();
           window.localStorage.clear();
           setTimeout(() => {

@@ -3,7 +3,7 @@ require('dotenv').config();
 // SERVER
 const express = require('express');
 //const authRouter = require('./app/routers/auth');
-const router = require('./app/routers/router');
+const router = require('./routers/router');
 const app = express();
 const expressSwagger = require('express-swagger-generator')(app);
 const cors = require('cors');
@@ -51,6 +51,12 @@ app.use(router);
 
 // PORT
 const port = process.env.PORT || 3000;
-app.listen(port, _ => {
-   console.log(`http://localhost:${port}`);
+
+app.get('/config', (req, res) => {
+    // Renvoyer l'URL du serveur
+    res.json({ serverUrl: process.env.SERVER_URL });
+  });
+
+app.listen(port, () => {
+   console.log(`Serveur en cours d'exécution sur le port ${port}`);
 });

@@ -1,4 +1,4 @@
-const pool = require('../../database');
+const pool = require('../database');
 
 module.exports = {
   
@@ -44,9 +44,7 @@ module.exports = {
         return result.rows[0];
     },
    
-
     async getBookmarkMember(memberId) {
-        console.log(memberId);
         const result = await pool.query(`SELECT json_agg(bookmark.*) AS bookmark FROM bookmark WHERE member_id = $1;`, [memberId]);
         return result.rows;
     },
