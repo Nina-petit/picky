@@ -21,7 +21,8 @@
     "joi": "^17.4.0",
     "jsonwebtoken": "^8.5.1",
     "node-fetch": "^2.6.1",
-    "pg": "^8.6.0"
+    "pg": "^8.6.0",
+    "webpack-dev-server": "^4.15.1"
   },
   "devDependencies": {
     "node-dev": "^7.0.0"
