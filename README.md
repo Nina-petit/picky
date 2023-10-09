@@ -1,6 +1,8 @@
 # Picky
 
-Ce projet est une application web qui permet de trouver des films ou séries et de savoir sur quelle(s) plateforme(s) de streaming on peut les regarder. C'était un projet de fin de formation [O'Clock développeur Fullstack Javascript](https://oclock.io/formations/developpeur-web-fullstack-javascript) qui a duré 1 mois et que l'on a créé dans une équipe de 5 personnes, où mon rôle était Lead Dev Front.
+Ce projet est une application web qui permet de trouver des films ou séries et de savoir sur quelle(s) plateforme(s) de streaming on peut les regarder. C'était un projet de fin de formation [O'Clock développeur Fullstack Javascript](https://oclock.io/formations/developpeur-web-fullstack-javascript) qui a duré 1 mois et que l'on a créé dans une équipe de 5 personnes, où mon rôle était Lead Dev Front.\
+Vous pouvez retrouver le dossier de projet revenant sur la création de Picky que j'ai présenté pour passer mon Titre professionnel Développeur Web et Web Mobile [ici](https://github.com/Nina-petit/Dossiers_titre-pro)
+
 
 ![Capture d'écran de mon projet](./front/src/assets/screenshot.png)
 
